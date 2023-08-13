@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { TextInput, StyleSheet } from "react-native";
 
-export const InputField = ({ placeholder, secureTextEntry }) => {
+export const InputField = ({
+  value,
+  placeholder,
+  secureTextEntry = false,
+  onChangeText,
+}) => {
   const [isOnFocus, setIsOnFocus] = useState(false);
 
   const handleOnFocus = () => setIsOnFocus(true);
@@ -11,11 +16,13 @@ export const InputField = ({ placeholder, secureTextEntry }) => {
 
   return (
     <TextInput
+      value={value}
       style={inputStyles}
       onFocus={handleOnFocus}
       onBlur={handleOnBlur}
       placeholder={placeholder}
       secureTextEntry={secureTextEntry}
+      onChangeText={onChangeText}
     />
   );
 };

@@ -1,30 +1,51 @@
-import {
-  View,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { InputField } from "./InputField";
+import { Alert } from "react-native";
+import { useState } from "react";
 
 export const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isPasswordHidden, setIsPasswordHidden] = useState(true);
+
+  const onLogin = () => {
+    Alert.alert(`email: ${email}, password: ${password}`);
+    console.log(`email: ${email}, password: ${password}`);
+  };
+
+  const onShowPress = () => {
+    setIsPasswordHidden(!isPasswordHidden);
+  };
   return (
     <View style={styles.wrapper}>
       <Text style={styles.title}>Увійти</Text>
       <View style={styles.formWrapper}>
         <InputField
+          value={email}
           placeholder={"Адреса електронної пошти"}
           secureTextEntry={false}
+          onChangeText={(text) => {
+            setEmail(text);
+          }}
         />
-        <InputField placeholder={"Пароль"} secureTextEntry={true} />
-        <Text style={styles.showText}>Показати</Text>
-        <TouchableOpacity style={styles.button}>
+        <InputField
+          value={password}
+          placeholder={"Пароль"}
+          secureTextEntry={isPasswordHidden ? true : false}
+          onChangeText={(text) => {
+            setPassword(text);
+          }}
+        />
+        <TouchableOpacity style={styles.showText} onPress={onShowPress}>
+          <Text> {isPasswordHidden ? "Показати" : "Приховати"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={onLogin}>
           <Text style={styles.buttonText}>Увійти</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity>
         <Text style={styles.text}>
-          Немає акаунту?{" "}
+          Немає акаунту?
           <Text style={styles.registerText}>Зареєструватись</Text>
         </Text>
       </TouchableOpacity>

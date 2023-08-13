@@ -2,14 +2,28 @@ import {
   View,
   StyleSheet,
   Text,
-  TextInput,
+  Alert,
   TouchableOpacity,
   Image,
 } from "react-native";
+import { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { InputField } from "./InputField";
 
 export const RegistrationForm = () => {
+  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isPasswordHidden, setIsPasswordHidden] = useState(true);
+
+  const onLogin = () => {
+    Alert.alert(`login: ${login}, email: ${email}, password: ${password}`);
+    console.log(`login: ${login}, email: ${email}, password: ${password}`);
+  };
+
+  const onShowPress = () => {
+    setIsPasswordHidden(!isPasswordHidden);
+  };
   return (
     <View style={styles.wrapper}>
       <View style={styles.imageWrapper}>
@@ -21,14 +35,33 @@ export const RegistrationForm = () => {
 
       <Text style={styles.title}>Реєстрація</Text>
       <View style={styles.formWrapper}>
-        <InputField placeholder={"Логін"} secureTextEntry={false} />
         <InputField
-          placeholder={"Адреса електронної пошти"}
-          secureTextEntry={false}
+          value={login}
+          placeholder={"Логін"}
+          onChangeText={(text) => {
+            setLogin(text);
+          }}
         />
-        <InputField placeholder={"Пароль"} secureTextEntry={true} />
-        <Text style={styles.showText}>Показати</Text>
-        <TouchableOpacity style={styles.button}>
+        <InputField
+          value={email}
+          placeholder={"Адреса електронної пошти"}
+          onChangeText={(text) => {
+            setEmail(text);
+          }}
+        />
+        <InputField
+          value={password}
+          placeholder={"Пароль"}
+          secureTextEntry={isPasswordHidden ? true : false}
+          onChangeText={(text) => {
+            setPassword(text);
+          }}
+        />
+        <TouchableOpacity style={styles.showText} onPress={onShowPress}>
+          <Text> {isPasswordHidden ? "Показати" : "Приховати"}</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={onLogin}>
           <Text style={styles.buttonText}>Зареєструватися</Text>
         </TouchableOpacity>
       </View>

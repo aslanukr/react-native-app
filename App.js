@@ -20,8 +20,8 @@ export default function App() {
       keyboardVerticalOffset={-170}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.inner}>
-          <RegistrationScreen />
-          {/* <LoginScreen /> */}
+          {/* <RegistrationScreen /> */}
+          <LoginScreen />
           <StatusBar style="auto" />
         </View>
       </TouchableWithoutFeedback>
