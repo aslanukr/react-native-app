@@ -1,18 +1,26 @@
 import React from "react";
-import { View, ImageBackground, StyleSheet } from "react-native";
+import {
+  View,
+  ImageBackground,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import photoBg from "../../assets/images/photo-bg.jpg";
 import { LoginForm } from "../components/LoginForm";
 
 export const LoginScreen = () => {
   return (
-    <View style={styles.content}>
-      <ImageBackground
-        source={photoBg}
-        resizeMode="cover"
-        style={styles.imageBackground}>
-        <LoginForm />
-      </ImageBackground>
-    </View>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.content}>
+        <ImageBackground
+          source={photoBg}
+          resizeMode="cover"
+          style={styles.imageBackground}>
+          <LoginForm />
+        </ImageBackground>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 

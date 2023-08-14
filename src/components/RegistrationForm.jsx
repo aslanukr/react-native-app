@@ -19,6 +19,9 @@ export const RegistrationForm = () => {
   const onLogin = () => {
     Alert.alert(`login: ${login}, email: ${email}, password: ${password}`);
     console.log(`login: ${login}, email: ${email}, password: ${password}`);
+    setLogin("");
+    setEmail("");
+    setPassword("");
   };
 
   const onShowPress = () => {
@@ -66,7 +69,9 @@ export const RegistrationForm = () => {
         </TouchableOpacity>
       </View>
       <TouchableOpacity>
-        <Text style={styles.text}>Вже є акаунт? Увійти</Text>
+        <Text style={styles.text}>
+          Вже є акаунт? <Text style={styles.loginText}>Увійти</Text>
+        </Text>
       </TouchableOpacity>
     </View>
   );
@@ -149,13 +154,7 @@ const styles = StyleSheet.create({
     top: 176,
     right: 16,
   },
-  // text: {
-  //   color: "#1B4371",
-  //   fontSize: 16,
-  //   lineHeight: 19,
-  //   fontWeight: 400,
-  //   textAlign: "center",
-  //   marginBottom: 32,
-  //   marginTop: 16,
-  // },
+  loginText: {
+    textDecorationLine: "underline",
+  },
 });

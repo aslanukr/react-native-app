@@ -11,6 +11,8 @@ export const LoginForm = () => {
   const onLogin = () => {
     Alert.alert(`email: ${email}, password: ${password}`);
     console.log(`email: ${email}, password: ${password}`);
+    setEmail("");
+    setPassword("");
   };
 
   const onShowPress = () => {
