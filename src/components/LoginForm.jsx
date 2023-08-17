@@ -2,17 +2,21 @@ import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { InputField } from "./InputField";
 import { Alert } from "react-native";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
+  const navigation = useNavigation();
+
   const onLogin = () => {
     Alert.alert(`email: ${email}, password: ${password}`);
     console.log(`email: ${email}, password: ${password}`);
     setEmail("");
     setPassword("");
+    navigation.navigate("BottomTabsNavigator");
   };
 
   const onShowPress = () => {
@@ -45,9 +49,9 @@ export const LoginForm = () => {
           <Text style={styles.buttonText}>Увійти</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Registration")}>
         <Text style={styles.text}>
-          Немає акаунту?
+          Немає акаунту?{" "}
           <Text style={styles.registerText}>Зареєструватись</Text>
         </Text>
       </TouchableOpacity>

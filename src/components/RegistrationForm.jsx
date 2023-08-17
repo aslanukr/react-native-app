@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { InputField } from "./InputField";
+import { useNavigation } from "@react-navigation/native";
 
 export const RegistrationForm = () => {
   const [login, setLogin] = useState("");
@@ -16,12 +17,15 @@ export const RegistrationForm = () => {
   const [password, setPassword] = useState("");
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
+  const navigation = useNavigation();
+
   const onLogin = () => {
     Alert.alert(`login: ${login}, email: ${email}, password: ${password}`);
     console.log(`login: ${login}, email: ${email}, password: ${password}`);
     setLogin("");
     setEmail("");
     setPassword("");
+    navigation.navigate("BottomTabsNavigator");
   };
 
   const onShowPress = () => {
@@ -68,7 +72,7 @@ export const RegistrationForm = () => {
           <Text style={styles.buttonText}>Зареєструватися</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Login")}>
         <Text style={styles.text}>
           Вже є акаунт? <Text style={styles.loginText}>Увійти</Text>
         </Text>
