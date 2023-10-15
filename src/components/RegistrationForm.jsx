@@ -84,7 +84,7 @@ export const RegistrationForm = () => {
 const styles = StyleSheet.create({
   wrapper: {
     position: "relative",
-    backgroundColor: "#ffffffff",
+    backgroundColor: "#ffff",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     paddingTop: 92,

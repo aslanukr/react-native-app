@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "photo": "https://st2.depositphotos.com/5039303/7722/i/950/depositphotos_77226751-stock-photo-walking-street-in-the-old.jpg",
+    "comments": "25",
+    "likes": "720",
+    "place": "Lviv, Ukraine",
+    "description": "вулиця Вірменська"
+  },
+  {
+    "id": 2,
+    "photo": "https://www.peru.travel/Contenido/Noticia/Imagen/fr/1041/1.0/Principal/rsary.jpg",
+    "comments": "30",
+    "likes": "850",
+    "place": "Machu Picchu, Peru",
+    "description": "Мачу-Пікчу"
+  },
+  {
+    "id": 3,
+    "photo": "https://i.insider.com/649b13386eb0a800194d589a?width=700",
+    "comments": "15",
+    "likes": "420",
+    "place": "Paris, France",
+    "description": "Ейфелева вежа"
+  },
+
+  {
+    "id": 4,
+    "photo": "https://navigator-ukraina.com.ua/media/k2/items/cache/760af276ee6f9b46d3f3a54c804b7c7d_XL.jpg",
+    "comments": "23",
+    "likes": "690",
+    "place": "Odesa, Ukraine",
+    "description": "Пам'ятник Дюку"
+  },
+  {
+    "id": 5,
+    "photo": "https://a.cdn-hotels.com/gdcs/production109/d262/bd38cd57-bbd8-441a-80b6-6465c035d8db.jpg",
+    "comments": "10",
+    "likes": "300",
+    "place": "Santorini, Greece",
+    "description": "Санторіні"
+  },
+  {
+    "id": 6,
+    "photo": "https://s0.tchkcdn.com/g-ZGkTvtSNg7B0NNKQ8CHniQ/17/263624/660x0/w/0/1c7_depositphotos_95282084_s_2019.jpg",
+    "comments": "18",
+    "likes": "550",
+    "place": "Carpathians, Ukraine",
+    "description": "Карпати"
+  },
+  {
+    "id": 7,
+    "photo": "https://mariart.kiev.ua/image/catalog/pr/wxtuaxas547r25aqelxadbgg.jpg",
+    "comments": "8",
+    "likes": "570",
+    "place": "Crimea, Ukraine",
+    "description": "Ластівчине гніздо"
+  }
+]

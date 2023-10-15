@@ -1,10 +1,11 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { PostsList } from "../components/PostsList";
 
 export const PostsScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Posts</Text>
+      <PostsList />
     </View>
   );
 };
@@ -14,5 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#ffff",
   },
 });
