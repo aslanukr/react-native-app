@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageBackground, VirtualizedList } from "react-native";
+import { ImageBackground } from "react-native";
 import { Text, View, StyleSheet } from "react-native";
 import { ProfilePosts } from "../components/ProfilePosts";
 import photoBg from "../../assets/images/photo-bg.jpg";

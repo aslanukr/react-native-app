@@ -55,6 +55,7 @@ export const BottomTabsNavigator = () => {
         name="CreatePosts"
         component={CreatePostsScreen}
         options={{
+          tabBarStyle: { display: "none" },
           title: "Створити публікацію",
           headerStyle: {
             backgroundColor: "#ffffff",

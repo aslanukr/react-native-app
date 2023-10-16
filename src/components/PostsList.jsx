@@ -12,7 +12,6 @@ export const PostsList = () => {
     <FlatList
       data={data}
       keyExtractor={(item) => item.id.toString()}
-      showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
       ListHeaderComponent={() => <UserInfo />}
       renderItem={({ item }) => (
