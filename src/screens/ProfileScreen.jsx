@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageBackground } from "react-native";
+import { ImageBackground, VirtualizedList } from "react-native";
 import { Text, View, StyleSheet } from "react-native";
 import { ProfilePosts } from "../components/ProfilePosts";
 import photoBg from "../../assets/images/photo-bg.jpg";
@@ -17,17 +17,19 @@ export const ProfileScreen = () => {
         resizeMode="cover"
         style={styles.imageBackground}>
         <View style={styles.wrapper}>
-          <View style={styles.imageWrapper}>
-            <Image source={userPhoto} style={styles.userImage} />
-            <View style={styles.iconWrapper}>
-              <X width={18} height={18} color="rgba(189, 189, 189, 1)" />
+          <View style={styles.userwrapper}>
+            <View style={styles.imageWrapper}>
+              <Image source={userPhoto} style={styles.userImage} />
+              <View style={styles.iconWrapper}>
+                <X width={18} height={18} color="rgba(189, 189, 189, 1)" />
+              </View>
             </View>
-          </View>
-          <View style={styles.logout}>
-            <LogOutBtn />
+            <View style={styles.logout}>
+              <LogOutBtn />
+            </View>
+            <Text style={styles.username}>{user.username}</Text>
           </View>
 
-          <Text style={styles.username}>{user.username}</Text>
           <ProfilePosts />
         </View>
       </ImageBackground>
@@ -37,24 +39,23 @@ export const ProfileScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
+    width: "100vw",
+    height: "100vh",
   },
   imageBackground: {
-    flex: 1,
     resizeMode: "cover",
     justifyContent: "flex-end",
   },
   wrapper: {
-    marginTop: 282,
+    marginTop: 287,
     position: "relative",
     backgroundColor: "#ffff",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
+    paddingHorizontal: 16,
+  },
+  userwrapper: {
     alignItems: "center",
-    paddingLeft: 16,
-    paddingRight: 16,
   },
   userImage: {
     width: 120,

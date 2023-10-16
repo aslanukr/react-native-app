@@ -23,6 +23,7 @@ export const InputField = ({
       placeholder={placeholder}
       secureTextEntry={secureTextEntry}
       onChangeText={onChangeText}
+      autoCapitalize={"none"}
     />
   );
 };

@@ -11,11 +11,11 @@ export const ProfilePosts = () => {
     <FlatList
       data={data}
       keyExtractor={(item) => item.id.toString()}
+      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
       renderItem={({ item }) => (
         <View style={styles.postwrapper}>
-          <View style={styles.imgwrapper}>
-            <Image style={styles.photo} source={{ uri: item.photo }} />
-          </View>
+          <Image style={styles.photo} source={{ uri: item.photo }} />
           <View style={styles.detailswrap}>
             <Text style={styles.title}>{item.description}</Text>
             <View style={styles.extra}>
@@ -61,27 +61,22 @@ export const ProfilePosts = () => {
 
 const styles = StyleSheet.create({
   postwrapper: {
-    maxWidth: 343,
     flex: 1,
     marginTop: 32,
-    justifyContent: "center",
     gap: 8,
-  },
-  imgwrapper: {
-    width: 343,
-    height: 240,
   },
   photo: {
     width: "100%",
-    height: "100%",
+    height: 240,
     borderRadius: 8,
   },
   detailswrap: {
-    flex: 1,
     flexWrap: "wrap",
     gap: 8,
   },
   title: {
+    maxWidth: 352,
+    flexWrap: "wrap",
     fontWeight: "500",
     fontSize: 16,
   },
