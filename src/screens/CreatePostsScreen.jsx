@@ -7,10 +7,9 @@ import {
   KeyboardAvoidingView,
   Keyboard,
   TouchableWithoutFeedback,
-  ScrollView,
 } from "react-native";
 
-import { Trash2 } from "react-native-feather";
+import { Trash2, MapPin } from "react-native-feather";
 
 export const CreatePostsScreen = () => {
   const [description, setDescription] = useState("");
@@ -23,7 +22,7 @@ export const CreatePostsScreen = () => {
       keyboardVerticalOffset={-170}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.content}>
-          <View style={styles.form}>
+          <View>
             <View style={styles.camerawrapper}>
               <View style={styles.imgplaceholder}>
                 <TouchableOpacity style={styles.camerabtn}>
@@ -47,11 +46,18 @@ export const CreatePostsScreen = () => {
               />
               <TextInput
                 value={place}
-                style={styles.input}
+                style={styles.location}
                 placeholder={"Місцевість..."}
                 onChangeText={(text) => {
                   setPlace(text);
-                }}></TextInput>
+                }}
+              />
+              <MapPin
+                style={styles.mapicon}
+                width={24}
+                height={24}
+                color={"rgba(189, 189, 189, 1)"}
+              />
             </View>
             <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Опублікувати</Text>
@@ -78,7 +84,6 @@ const styles = StyleSheet.create({
     position: "relative",
     flex: 1,
   },
-  form: {},
   camerawrapper: { gap: 8 },
   imgplaceholder: {
     marginTop: 32,
@@ -103,13 +108,28 @@ const styles = StyleSheet.create({
     fontWeight: "400",
   },
   inputwrapper: {
+    position: "relative",
     marginTop: 32,
     gap: 16,
   },
   input: {
+    fontSize: 16,
+    fontWeight: "500",
     paddingVertical: 16,
     borderBottomWidth: 1,
     borderColor: "rgba(232, 232, 232, 1)",
+  },
+  location: {
+    fontSize: 16,
+    fontWeight: "400",
+    paddingVertical: 16,
+    paddingLeft: 28,
+    borderBottomWidth: 1,
+    borderColor: "rgba(232, 232, 232, 1)",
+  },
+  mapicon: {
+    position: "absolute",
+    bottom: 34,
   },
   button: {
     width: "100%",
